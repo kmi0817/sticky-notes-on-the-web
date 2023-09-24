@@ -1,22 +1,22 @@
 export const indexHTML = (pageName, categories, notes) => {
     return /*html*/`
     ${headerHTML(pageName, categories)}
+    ${navHTML(categories)}
     ${mainHTML(categories, notes)}
     ${footerHTML()}
     `;
 }
 
-const headerHTML = (pageName, categories) => {
+const headerHTML = (pageName) => {
     return /*html*/ `
-    <header>
-        <a href="/">${pageName}</a>
-        ${navHTML(categories)}
+    <header class="width-70">
+        <a href="/" class="font-size-32">${pageName}</a>
     </header>
     `;
 }
 
 const navHTML = (categories) => {
-    let html = `<nav>`
+    let html = `<nav class="width-70">`
     for (const category of categories) {
         html += `<a href="#${category}">${category}</a>`;
     }
@@ -26,10 +26,10 @@ const navHTML = (categories) => {
 }
 
 const mainHTML = (categories, notes) => {
-    let html = `<main>`
+    let html = `<main class="width-70">`
     for (const category of categories) {
         html += `
-        <section>
+        <section class="truncate-container">
             ${createNotesByCategory(notes[category])}
         </section>`;
     }
@@ -39,14 +39,14 @@ const mainHTML = (categories, notes) => {
 }
 
 const createNotesByCategory = (notes) => {
-    return notes.map(note => `<p title="${note}">${note}</p>`).join("");
+    return notes.map(note => `<p class="truncate note" title="${note}">${note}</p>`).join("");
 }
 
 const footerHTML = () => {
     return /*html*/`
-    <footer>
-        <p>Created by kmi0817</p>
-        <p>2023.09</p>
+    <footer class="width-70">
+        <p class="font-size-8">Created by kmi0817</p>
+        <p class="font-size-8">2023.09</p>
     </footer>
     `;
 }
