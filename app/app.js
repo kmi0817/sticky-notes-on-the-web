@@ -7,5 +7,6 @@ dotenv.config();
 const app = express();
 
 app.use(morgan("dev"));
+app.use(express.static("./public"));
 
 export default app;
