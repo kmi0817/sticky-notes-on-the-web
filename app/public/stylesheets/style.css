@@ -1,0 +1,108 @@
+@font-face {
+    font-family: "D2Coding";
+    src: url("/fonts/D2Coding-Ver1.3.2-20180524.ttc");
+}
+
+:root {
+    --D2Coding-16: 1rem "D2Coding";
+    --default-surface: #f7f7ed;
+    --default-border: #9b9e9b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font: var(--D2Coding-16);
+    background-color: var(--default-surface);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.font-size-32 {
+    font-size: 2rem;
+}
+
+.font-size-8 {
+    font-size: 0.5rem;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    flex-direction: column;
+}
+
+.width-70 {
+    width: 70%;
+}
+
+header {
+    padding: 2rem;
+    text-align: center;
+}
+
+nav {
+    padding: 1rem;
+    display: flex;
+}
+
+nav > a {
+    flex: 1;
+    margin-right: 0.5rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    border-top: 0.5px solid var(--default-border);
+    border-right: 0.5px solid var(--default-border);
+}
+
+nav > a:last-child {
+    margin-right: 0;
+}
+
+main {
+    min-height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: 0.5px solid var(--default-border);
+}
+
+section {
+    flex: 1;
+}
+
+footer {
+    padding: 2rem;
+}
+
+.note {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 0.5px solid var(--default-border);
+    border-radius: 1rem;
+}
+
+.truncate-container {
+    overflow: hidden;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: grab;
+}
+
+.truncate:hover::before {
+    font-weight: bold;
+}
